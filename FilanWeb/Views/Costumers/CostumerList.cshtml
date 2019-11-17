@@ -1,0 +1,27 @@
+﻿@model IEnumerable<FilanWeb.Models.Costumer>
+@{
+    ViewBag.Title = "CostumerList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Costumers</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Costumer</th>
+            <th>Discount Rate</th>
+            <th>Membership Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var costumer in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(costumer.Name, "Details", "Costumers", new { id = costumer.Id }, null)</td>
+                <td>@costumer.MembershipType.DiscountRate%</td>
+                <td>@costumer.MembershipType.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
