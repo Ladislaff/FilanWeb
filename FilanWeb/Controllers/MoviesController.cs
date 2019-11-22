@@ -78,7 +78,7 @@ namespace FilanWeb.Controllers
 			{
 				var viewModel = new NewMovieViewModel
 				{
-					Movie = movie,
+					//Movie = movie,
 					Genres = _contex.Genres.ToList()
 				};
 				return View("NevMovie", viewModel);
@@ -86,7 +86,7 @@ namespace FilanWeb.Controllers
 
 			if (movie.Id == 0)
 			{
-				movie.DateAdded = DateTime.Now;
+				 movie.DateAdded = DateTime.Now;
 				_contex.Movies.Add(movie);
 			}
 			else
