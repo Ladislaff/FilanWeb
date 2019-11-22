@@ -1,0 +1,37 @@
+﻿@model FilanWeb.ViewModels.NewCostumerViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Customer</h2>
+
+@using (@Html.BeginForm("Create", "Costumers"))
+{@Html.ValidationSummary(true, "Please fix following errors!")
+<div class="form-group">
+    @Html.LabelFor(m => m.Costumer.Name)
+    @Html.TextBoxFor(m => m.Costumer.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Costumer.Name)
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Costumer.MembershipTypeId)
+    @Html.DropDownListFor(m => m.Costumer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Costumer.MembershipTypeId)
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Costumer.Birthdate)
+    @Html.TextBoxFor(m => m.Costumer.Birthdate,"{0:d MMM yyyy}", new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Costumer.Birthdate)
+</div>
+<div class="form-group form-check">
+    <label> @Html.CheckBoxFor(m => m.Costumer.IsSubsctibedToNewsletter) Subscribed To NewSlette ?</label>
+</div>
+@Html.AntiForgeryToken()
+@Html.HiddenFor(m => m.Costumer.Id)
+<button type="submit" class="btn btn-primary">Safe</button>
+}
+
+@section scripts
+    {
+    @Scripts.Render("~/bundles/jqueryval")
+}

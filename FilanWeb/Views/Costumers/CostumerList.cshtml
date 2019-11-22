@@ -5,6 +5,9 @@
 }
 
 <h2>Costumers</h2>
+<a href="@Url.Action("New", "Costumers")"><button type="submit" class="btn btn-primary">Add New Movie</button></a>
+<br>
+<br />
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -17,7 +20,7 @@
         @foreach (var costumer in Model)
         {
             <tr>
-                <td>@Html.ActionLink(costumer.Name, "Details", "Costumers", new { id = costumer.Id }, null)</td>
+                <td>@Html.ActionLink(costumer.Name, "Edit", "Costumers", new { id = costumer.Id }, null)</td>
                 <td>@costumer.MembershipType.DiscountRate%</td>
                 <td>@costumer.MembershipType.Name</td>
             </tr>

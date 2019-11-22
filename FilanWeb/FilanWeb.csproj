@@ -199,15 +199,39 @@
     <Compile Include="Migrations\201911172016572_AddMembershipType1.Designer.cs">
       <DependentUpon>201911172016572_AddMembershipType1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911181731335_AddDateTimeCostumers.cs" />
+    <Compile Include="Migrations\201911181731335_AddDateTimeCostumers.Designer.cs">
+      <DependentUpon>201911181731335_AddDateTimeCostumers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911181743516_AddRequiredMembershipType.cs" />
+    <Compile Include="Migrations\201911181743516_AddRequiredMembershipType.Designer.cs">
+      <DependentUpon>201911181743516_AddRequiredMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911181816481_AddGenreToMovie.cs" />
+    <Compile Include="Migrations\201911181816481_AddGenreToMovie.Designer.cs">
+      <DependentUpon>201911181816481_AddGenreToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911181836349_AddTypeOfMovie.cs" />
+    <Compile Include="Migrations\201911181836349_AddTypeOfMovie.Designer.cs">
+      <DependentUpon>201911181836349_AddTypeOfMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911211053543_AddGenre.cs" />
+    <Compile Include="Migrations\201911211053543_AddGenre.Designer.cs">
+      <DependentUpon>201911211053543_AddGenre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Costumer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\NewCostumerViewModel.cs" />
+    <Compile Include="ViewModels\NewMovieViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +295,9 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Costumers\CostumerList.cshtml" />
     <Content Include="Views\Costumers\Details.cshtml" />
+    <Content Include="Views\Movies\DetailsMovie.cshtml" />
+    <Content Include="Views\Costumers\New.cshtml" />
+    <Content Include="Views\Movies\NevMovie.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -307,6 +334,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911172016572_AddMembershipType1.resx">
       <DependentUpon>201911172016572_AddMembershipType1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911181731335_AddDateTimeCostumers.resx">
+      <DependentUpon>201911181731335_AddDateTimeCostumers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911181743516_AddRequiredMembershipType.resx">
+      <DependentUpon>201911181743516_AddRequiredMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911181816481_AddGenreToMovie.resx">
+      <DependentUpon>201911181816481_AddGenreToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911181836349_AddTypeOfMovie.resx">
+      <DependentUpon>201911181836349_AddTypeOfMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911211053543_AddGenre.resx">
+      <DependentUpon>201911211053543_AddGenre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
