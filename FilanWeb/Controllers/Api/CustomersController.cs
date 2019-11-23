@@ -14,7 +14,7 @@ namespace FilanWeb.Controllers.Api
 {
     public class CustomersController : ApiController
     {	
-		public ApplicationDbContext _context;
+		private ApplicationDbContext _context;
 
 		public CustomersController()
 		{
@@ -65,10 +65,10 @@ namespace FilanWeb.Controllers.Api
 			var costomerInDb = _context.Costumers.SingleOrDefault(c => c.Id == id);
 
 
-			if (costumerDto == null)
+			if (costomerInDb == null)
 				throw new HttpResponseException(HttpStatusCode.NotFound);
 
-			Mapper.Map(costumerDto, costumerDto);
+			Mapper.Map(costumerDto, costomerInDb);
 			
 			_context.SaveChanges();
 		}	
