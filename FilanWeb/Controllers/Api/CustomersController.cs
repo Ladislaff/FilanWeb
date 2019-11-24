@@ -7,6 +7,7 @@ using System.Web.Http;
 using FilanWeb.Models;
 using FilanWeb.Dtos;
 using AutoMapper;
+using System.Data.Entity;
 
 
 
@@ -21,10 +22,15 @@ namespace FilanWeb.Controllers.Api
 			_context = new ApplicationDbContext();
 		}
 
-		public IEnumerable<CostumerDto> GetCostumers()
+		public IHttpActionResult GetCostumers()
 
 		{
-			return _context.Costumers.ToList().Select(Mapper.Map<Costumer,CostumerDto>);
+			var costumerDto = _context.Costumers
+				.Include(c => c.MembershipType)
+				.ToList()
+				.Select(Mapper.Map<Costumer, CostumerDto>);
+
+			return Ok(costumerDto);
 		}
 
 		public IHttpActionResult GetCostumer(int id)

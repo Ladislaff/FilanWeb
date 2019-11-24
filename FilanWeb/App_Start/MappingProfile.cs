@@ -13,10 +13,14 @@ namespace FilanWeb.App_Start
 		public MappingProfile()
 		{
 			Mapper.CreateMap<Costumer,CostumerDto>();
-			Mapper.CreateMap<CostumerDto, Costumer>();
+			Mapper.CreateMap<CostumerDto, Costumer>().ForMember(c => c.Id, opt => opt.Ignore());
 
 			Mapper.CreateMap<Movie, MoviesDto>();
-			Mapper.CreateMap<MoviesDto, Movie>();
+			Mapper.CreateMap<MoviesDto, Movie>().ForMember(c => c.Id, opt => opt.Ignore());
+
+			Mapper.CreateMap<Genre, GenreDto>();
+
+			Mapper.CreateMap<MembershipType, MembershipTypeDto>();
 		}
 	}
 	

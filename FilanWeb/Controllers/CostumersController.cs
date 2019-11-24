@@ -67,9 +67,8 @@ namespace FilanWeb.Controllers
 		// GET: Costumers
 		public ViewResult CostumerList()
 		{
-			var costumer = _contex.Costumers.Include(c => c.MembershipType).ToList();
 
-			return View(costumer);
+			return View();
 		}
 		public ActionResult Details(int id)
 		{

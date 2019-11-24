@@ -7,6 +7,9 @@ using System.Web.Http;
 using FilanWeb.Models;
 using FilanWeb.Dtos;
 using AutoMapper;
+using System.Data.Entity;
+
+
 
 namespace FilanWeb.Controllers.Api
 {
@@ -23,9 +26,14 @@ namespace FilanWeb.Controllers.Api
 
 		//GET /api/movies
 
-		public IEnumerable<MoviesDto> GetMovies()
+		public IHttpActionResult GetMovies()
 		{
-			return _context.Movies.ToList().Select(Mapper.Map<Movie, MoviesDto>);
+			var movieDto= _context.Movies
+				.Include(c => c.Genre)
+				.ToList()
+				.Select(Mapper.Map<Movie, MoviesDto>);
+
+			return Ok(movieDto);
 		}
 
 		//GET /api/movies/1

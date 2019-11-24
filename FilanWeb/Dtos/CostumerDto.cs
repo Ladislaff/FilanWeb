@@ -14,7 +14,9 @@ namespace FilanWeb.Dtos
 		[Required]
 		[StringLength(255)]
 		public string Name { get; set; }
-		
+
+		public MembershipTypeDto MembershipType { get; set; }
+
 		public bool IsSubsctibedToNewsletter { get; set; }
 		
 		public byte MembershipTypeId { get; set; }
